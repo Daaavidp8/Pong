@@ -1,0 +1,262 @@
+* , *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P'; /* Utiliza una fuente de estilo de videojuego, como 'Press Start 2P'. Puedes encontrarla en Google Fonts. */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.containerForm{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: calc(25vh);
+    left: 0;
+}
+
+.campo{
+    position: relative;
+    display: flex;
+    background-color: green;
+    height: 95vh;
+    width: 95vw;
+    justify-content: center;
+    border: 5px solid black;
+}
+
+.jugadores{
+    position: absolute;
+    background-color: black;
+    height: 20vh;
+    width: 20px;
+    border-radius: 20px;
+}
+
+.jugador1{
+    left: 25px;
+    top: calc((95vh / 2) - 10vh);
+}
+
+.jugador2{
+    right: 25px;
+    top: calc((95vh / 2) - 10vh);
+}
+
+.linea{
+    width: 5px;
+    background-color: black;
+}
+
+.circulo{
+    top: 25%;
+    position: absolute;
+    height: 50vh;
+    width: 50vh;
+    border: 5px solid black;
+    border-radius: 100%;
+}
+
+.pelota{
+    background-color: white;
+    position: absolute;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    border: 2px solid;
+}
+.contador{
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+    z-index: 1;
+}
+.contador>h1{
+    color: white;
+    font-size: 20rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    animation: letteranim 1.5s infinite ease;
+    opacity: 0;
+}
+
+
+@keyframes letteranim {
+    0% {
+        filter: blur(0.3em);
+        opacity: 0;
+    }
+    100%{
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.fondoOscuro{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 1em;
+    width: 200px;
+    border-radius: 4px;
+    color: black;
+}
+
+
+.button {
+    margin-top: 10px;
+    position: relative;
+    left: 10px;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+
+    border-color: transparent transparent transparent white;
+    transition: 100ms all ease;
+    cursor: pointer;
+
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+
+    &:hover {
+        border-color: transparent transparent transparent #909090;
+    }
+}
+
+.puntuaciones{
+    color: black;
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    text-align: center;
+    font-size: 4em;
+    transition: 2s;
+}
+
+.menuOpciones{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+    z-index: 1;
+}
+
+.menuOpciones>h1{
+    cursor: pointer;
+    transition: 0.5s;
+}
+.menuOpciones>h1:hover{
+    font-size: 2.5em;
+}
+
+
+h1 {
+    color: #f00; /* Color rojo para el título */
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+select, input {
+    font-family: 'Press Start 2P', cursive; /* Aplica la fuente de estilo de videojuego a los elementos de entrada y selección */
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #fff; /* Borde blanco */
+}
+
+#inputs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: max-content;
+}
+
+#mensajeError>p{
+    padding: 5px;
+    width: max-content;
+    display: block;
+    border: red 1px solid;
+    border-radius: 5px;
+}
+
+.scoreBoard{
+    width: max-content;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    padding: 30px;
+}
+
+.scoreBoard>h1{
+    color: white;
+    font-size: 5em;
+    text-align: center;
+}
+.scoreBoard>button{
+    background-color: white;
+    color: black;
+    border: black 1px solid;
+   padding: 10px;
+}
+
+.scoreBoard>div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.scoreBoard>div>h1{
+    color: white;
+    font-size: 3em;
+}
+
+
+
+
+
+
+

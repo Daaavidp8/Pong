@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div class="containerForm">
+    <h1>PONG</h1>
+        <label>Selecciona Modo de Juego:
+            <select name="gameMode" class="custom-select" onchange="cambiarForm()">
+                <option value="1">1 Jugador</option>
+                <option value="2">2 Jugadores</option>
+            </select>
+        </label>
+    <div id="inputs">
+        <div>
+            <h3>Teclas Jugador 1</h3>
+            <label>Nombre: <input type="text" name="namejug1"></label>
+            <label>Arriba: <input type="text" name="upPlayer1" maxlength="1"></label>
+            <label>Abajo: <input type="text" name="downPlayer1" maxlength="1"></label>
+            <label>Scroll: <input type="radio" name="scroll" id="jug1" onclick="desselectRadio(this)"></label>
+        </div>
+    </div>
+    <div id="mensajeError"></div>
+    <button class="button" onclick="validar()"></button>
+    <script src="../js/index.js"></script>
+</div>
+</body>
+</html>

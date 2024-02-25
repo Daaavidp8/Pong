@@ -1,0 +1,96 @@
+<html>
+	<head>
+
+		<style>
+			body {
+				overflow:hidden;
+			}
+			
+			#paddle {
+				width: 40px;
+				height: 150px;
+				position: absolute;
+				top: calc(50% - 75px);
+				left: 50px;
+				background-color: #666666;
+			}
+
+			#ball {
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: calc(50% - 40px);
+				left: calc(50% - 40px);
+				background-color: #AA0000;
+				border-radius: 40px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="paddle"><!-- paddle --></div>
+		<div id="ball"><!-- ball --></div>
+	</body>	
+		<script>
+			const paddle = document.getElementById("paddle");
+			const ball = document.getElementById("ball");
+			
+			var velocity_x = 5;
+			var velocity_y = 5;
+
+			//Add onkeypress handler
+			document.onkeypress = move_paddle;
+			
+			// Move ball
+			var ball_movement = setInterval(move_ball, 10);
+
+			function move_ball(){
+				
+
+				console.log(ball.offsetTop);
+				console.log(window.innerHeight);
+
+
+				//Check Top
+				if (ball.offsetTop <= 0) {
+					velocity_y = -velocity_y;
+				}
+
+				//Check right
+				if (ball.offsetLeft + ball_radius >= window.innerWidth) {
+					velocity_x = -velocity_x;
+				}
+
+				//Check bottom
+				if (ball.offsetTop+ ball_radius  >= window.innerHeight) {
+					velocity_y = -velocity_y;
+				}
+
+				//Check left
+				if (ball.offsetLeft <= 0) {
+					clearInterval(ball_movement);
+					alert ("You lose");
+					location.reload();
+				}
+
+				// Check collision
+				if (ball.offsetLeft - ball_radius <= 90 && ball.offsetTop<=(paddle.offsetTop+75) && ball.offsetTop>=(paddle.offsetTop-75)) {
+					velocity_x = -velocity_x;
+				}
+				
+				ball.style.top = (ball.offsetTop + velocity_y) +"px";
+				ball.style.left = (ball.offsetLeft + velocity_x) +"px";
+			
+			}
+
+			function move_paddle(pkey){
+				// console.log("tecla pulsada: " + pkey.which);  
+
+				if (pkey.which == 56){
+					paddle.style.top = (paddle.offsetTop - 10) +"px";
+				} else if (pkey.which == 50){
+					paddle.style.top = (paddle.offsetTop + 10) +"px";
+				}
+			}
+		</script>
+</html>
